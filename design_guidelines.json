@@ -1,0 +1,125 @@
+{
+  "project_name": "VoltNet",
+  "domain": "Web3 Energy Trading",
+  "theme": "Dark",
+  "archetype": "Archetype 7: Electric & Neon",
+  "design_philosophy": "A high-performance command center for decentralized energy trading. The UI must feel like a sophisticated crypto-exchange merging with an electrical grid monitor. Emphasize dense data clarity, neon accents acting as 'active energy' visual cues, and structural glass surfaces over deep void backgrounds. Never use fully generic gradients; rely on deep contrasts, tactical minimalism, and glowing focal points.",
+  "typography": {
+    "pairing_strategy": "The Editorial Future (Web3 Variant): Crisp geometric sans-serif for UI, and high-legibility monospace for transactional data.",
+    "fonts": {
+      "headings": "'Outfit', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "data_and_code": "'JetBrains Mono', monospace"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "body": "text-base leading-relaxed text-slate-300",
+      "data_large": "text-3xl font-mono tracking-tight",
+      "labels": "text-xs font-mono uppercase tracking-[0.2em] text-slate-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#030407",
+      "surface": "#080B12",
+      "surface_elevated": "#0D131F"
+    },
+    "accents": {
+      "primary": "#00FF66",
+      "primary_glow": "rgba(0, 255, 102, 0.4)",
+      "secondary": "#00F0FF",
+      "secondary_glow": "rgba(0, 240, 255, 0.4)",
+      "warning": "#FFB800",
+      "danger": "#FF3366"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#8A99A8",
+      "muted": "#4B5563"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.08)",
+      "active": "rgba(0, 255, 102, 0.3)"
+    }
+  },
+  "surfaces_and_effects": {
+    "glass_panel": "bg-[#0A0E17]/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+    "terminal_card": "bg-[#030407] border border-[#00FF66]/30 shadow-[0_0_15px_rgba(0,255,102,0.05)]",
+    "button_primary": "bg-[#00FF66] text-black font-semibold hover:bg-[#00E055] hover:shadow-[0_0_20px_rgba(0,255,102,0.5)] transition-all duration-300",
+    "button_outline": "bg-transparent border border-white/20 text-white hover:border-[#00F0FF] hover:text-[#00F0FF] hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all duration-300",
+    "tracing_beam": "A glowing gradient line that travels around card edges for premium pricing/bidding components."
+  },
+  "layout_and_spacing": {
+    "container_padding": "p-6 md:p-8",
+    "grid_gap": "gap-6 md:gap-8",
+    "dashboard_mode": "The 'Control Room' Grid - grid-cols-1 md:grid-cols-3 lg:grid-cols-4 with tight gaps (gap-4 or gap-6). Cards must use h-full to stretch seamlessly.",
+    "landing_mode": "The 'Tetris' Grid - wide asymmetrical gaps (gap-8 to gap-12). Leave negative space intentionally."
+  },
+  "motion_and_interactions": {
+    "hover_states": "Cards lift slightly (-translate-y-1) and borders illuminate to the primary neon color.",
+    "page_transitions": "Fade and slight scale-up (opacity 0 to 1, scale 0.98 to 1) using Framer Motion.",
+    "data_updates": "Number counters should animate their values (ticker effect). Blockchain blocks should slide in from the top or left."
+  },
+  "media": {
+    "icons_library": "lucide-react",
+    "charts_library": "recharts",
+    "image_urls": [
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1772050138768-2107c6e62a03",
+        "description": "Abstract green light trails on black background. Use with a dark overlay (bg-black/60) to ensure text legibility. Ideal for the Landing Page hero section."
+      },
+      {
+        "category": "wallet_connect_bg",
+        "url": "https://images.pexels.com/photos/7562085/pexels-photo-7562085.jpeg",
+        "description": "Close-up of a human hand touching a circuit board with blue and red neon lighting. Use as the background for the Simulated Wallet Login page."
+      },
+      {
+        "category": "marketplace_texture",
+        "url": "https://images.unsplash.com/photo-1669479412055-103edfb64cc4",
+        "description": "Blue and green luminous lines. Use as a subtle, low-opacity background texture (10% opacity) behind the Marketplace or Blockchain Ledger grids."
+      }
+    ]
+  },
+  "pages_and_features": {
+    "LandingPage": {
+      "layout": "Full screen hero with the abstract light trail background. 'Tetris' bento grid below explaining the 'Greedy Matching Algorithm'.",
+      "components": "Massive H1, dynamic text marquee showing live simulated energy prices, solid Primary CTA ('Launch App')."
+    },
+    "RoleSelection": {
+      "layout": "Split screen or two massive Glassmorphism cards.",
+      "visuals": "Buyer card highlighted with Neon Blue. Seller card highlighted with Neon Green."
+    },
+    "WalletLogin": {
+      "layout": "Centered glass panel over the circuit board background.",
+      "components": "Simulated 'Connect Wallet' button with pulse animation. Fake loading terminal text showing 'Initializing secure connection...'."
+    },
+    "Dashboard": {
+      "layout": "Control Room Grid (grid-cols-4).",
+      "components": "Top row: Key metrics (Wallet Balance, Active Bids/Listings, Energy Generated/Consumed). Middle row: Recharts Line Chart (Price Trends) spanning col-span-3. Side col: Recent Transactions list.",
+      "charts": "Recharts with dark grids (#222222), #00F0FF for lines, and custom tooltips with dark glassmorphism backgrounds."
+    },
+    "Marketplace": {
+      "layout": "Dense data table layout.",
+      "components": "Shadcn UI Tabs for 'Buy/Sell'. A live order book style table showing current bids/asks. A visual indicator of the 'Market Efficiency Score' using a glowing radial progress chart."
+    },
+    "BlockchainLedger": {
+      "layout": "Terminal/Retro-Futurism style list.",
+      "components": "Monospace fonts exclusively. Deep black background. Blocks presented as connected nodes with properties: buyer, seller, energy (kWh), price, timestamp. Animated checkmarks."
+    }
+  },
+  "testing_and_accessibility": {
+    "test_attributes": "All interactive elements (buttons, inputs, tabs, wallet connect) MUST have a kebab-case data-testid attribute.",
+    "contrast": "Text over images must use drop-shadows or dark overlays to maintain high APCA contrast. Hover states must be distinctly lighter or glow."
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme and specific neon hex codes provided. Do NOT use default Tailwind blue or generic grays.",
+    "Implement Recharts for the Price trends (line chart) and Supply vs Demand (bar chart) using the specified neon colors.",
+    "The Blockchain Ledger MUST use JetBrains Mono (or similar monospace) and look like a terminal/code output interface.",
+    "Use framer-motion for smooth entrance animations and micro-interactions on the dashboard cards.",
+    "NEVER use placeholder images; use the provided Unsplash/Pexels URLs in the media section.",
+    "Create realistic simulation data for the Greedy Matching Algorithm and order book in the Marketplace page."
+  ]
+}
