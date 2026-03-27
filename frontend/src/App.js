@@ -1,53 +1,46 @@
-import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Toaster } from "sonner";
+import { AppProvider } from "@/context/AppContext";
+import LandingPage from "@/pages/LandingPage";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
+import RoleSelection from "@/pages/RoleSelection";
+import WalletConnect from "@/pages/WalletConnect";
+import Dashboard from "@/pages/Dashboard";
+import Marketplace from "@/pages/Marketplace";
+import BlockchainLedger from "@/pages/BlockchainLedger";
 
 function App() {
   return (
-    <div className="App">
+    <AppProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/select-role" element={<RoleSelection />} />
+          <Route path="/connect-wallet" element={<WalletConnect />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/blockchain" element={<BlockchainLedger />} />
         </Routes>
       </BrowserRouter>
-    </div>
+      <Toaster
+        theme="dark"
+        richColors
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: 'rgba(10, 14, 23, 0.9)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(12px)',
+            color: '#fff',
+            fontFamily: "'Manrope', sans-serif",
+          },
+        }}
+      />
+    </AppProvider>
   );
 }
 
